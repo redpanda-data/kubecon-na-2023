@@ -1,0 +1,47 @@
+auth:
+  sasl:
+    enabled: false
+tls:
+  enabled: false
+external:
+  enabled: true
+  type: NodePort
+  addresses: 
+    - 10.224.0.7
+    - 10.224.0.8
+    - 10.224.0.10
+  annotations:
+    cloud.google.com/load-balancer-type: "Internal"
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+
+logging:
+  logLevel: warn
+storage:
+  persistentVolume:
+    enabled: true
+    size: 500Gi
+    storageClass: "csi-driver-lvm-linear-xfs"
+config:
+  kafka:
+    brokers:
+      - redpanda-0
+      - redpanda-1
+      - redpanda-2
+resources:
+  cpu:
+    cores: 7
+  memory:
+    container:
+      max: 21.0Gi
+statefulset:
+  initContainers:
+    tuning:
+      resources:
+        limits:
+          cpu: 1
+          memory: 1Gi
+    configurator:
+      resources:
+        limits:
+          cpu: 1
+          memory: 1Gi

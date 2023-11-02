@@ -1,0 +1,16 @@
+apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: redpanda
+spec:
+  forProvider:
+    chart:
+      name: redpanda
+      repository: 
+      version: 15.2.5
+    namespace: redpanda
+    values:
+      service:
+        type: ClusterIP
+  providerConfigRef:
+    name: redpanda-provider

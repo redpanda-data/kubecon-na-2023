@@ -1,0 +1,54 @@
+auth:
+  sasl:
+    enabled: false
+tls:
+  enabled: false
+external:
+  enabled: true
+  type: LoadBalancer
+  addresses: 
+    - 10.128.15.208
+    - 10.128.15.209
+    - 10.128.15.207
+# annotations:
+#   cloud.google.com/load-balancer-type: "Internal"
+#   service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+#   service.beta.kubernetes.io/aws-load-balancer-scheme: "internal"
+logging:
+  logLevel: warn
+#
+# https://github.com/metal-stack/csi-lvm
+#    + an approriate storage class
+#
+storage:
+  persistentVolume:
+    enabled: true
+    size: 720Gi
+    storageClass: "csi-driver-lvm-linear-xfs"
+config:
+  kafka:
+# These are the advertised addresses
+    brokers:
+      - redpanda-0
+      - redpanda-1
+      - redpanda-2
+# These allow for QoS Guaranteed in Kubernetes >= 1.26 (Adjust accordingly)
+resources:
+  cpu:
+    cores: 7
+  memory:
+    container:
+      max: 21.0Gi
+# In order for QoS Guaranteed in Kubernetes, all containers in the pod have to have integer CPU limits set.
+statefulset:
+  initContainers:
+    tuning:
+      resources:
+        limits:
+          cpu: 1
+          memory: 1Gi
+    configurator:
+      resources:
+        limits:
+          cpu: 1
+          memory: 1Gi

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ssd-disk
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: csi-driver-lvm-linear-xfs
+  resources:
+    requests:
+      storage: 500Gi

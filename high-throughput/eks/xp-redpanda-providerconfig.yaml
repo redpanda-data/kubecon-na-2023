@@ -1,0 +1,11 @@
+apiVersion: helm.crossplane.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: redpanda-provider
+spec:
+  credentials:
+    secretRef:
+      key: kubeconfig
+      name: cluster-config
+      namespace: crossplane-system
+    source: Secret
