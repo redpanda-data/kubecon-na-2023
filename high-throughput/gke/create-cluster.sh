@@ -1,4 +1,4 @@
-gcloud beta container --project "paulc-383416" clusters create "cluster-1" \
+gcloud beta container --project "xxxxx" clusters create "cluster-1" \
 --zone "us-central1-a" \
 --no-enable-basic-auth \
 --cluster-version "1.26.7-gke.500" \
@@ -15,8 +15,8 @@ gcloud beta container --project "paulc-383416" clusters create "cluster-1" \
 --logging=SYSTEM,WORKLOAD \
 --monitoring=SYSTEM \
 --enable-ip-alias \
---network "projects/paulc-383416/global/networks/default" \
---subnetwork "projects/paulc-383416/regions/us-central1/subnetworks/default" \
+--network "projects/xxxxx/global/networks/default" \
+--subnetwork "projects/xxxxx/regions/us-central1/subnetworks/default" \
 --no-enable-intra-node-visibility \
 --default-max-pods-per-node "110" \
 --no-enable-master-authorized-networks \
