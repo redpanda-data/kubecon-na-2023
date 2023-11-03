@@ -3,7 +3,7 @@ In this repo, there are several examples of Redpanda deployments in Kubernetes. 
 
 ### Crossplane
 
-Quick method to handle Redpanda in Corssplane utilizing the Crossplane Helm provider. Crossplane Helm Provider: https://github.com/crossplane-contrib/provider-helm
+Quick method to handle Redpanda in Crossplane utilizing the Crossplane Helm provider. Crossplane Helm Provider: https://github.com/crossplane-contrib/provider-helm
 
 ### High-Throughput
 
