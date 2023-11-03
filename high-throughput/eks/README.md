@@ -1,6 +1,6 @@
 ### For EKS cluster with NVMe and LVM Linear XFS Storage Class
 
-(This is an example to test the I/O speed of the disks)
+(This is an example to test the I/O speed of the disks.  The `fio` script is in the parent directory)
 
 Sequence of Commands:
 
