@@ -1,0 +1,11 @@
+auth:
+  sasl:
+    enabled: false
+tls:
+  enabled: false
+storage:
+  persistentVolume:
+    enabled: true
+    size: 10Gi
+    storageClass: "csi-driver-lvm-linear-xfs"
+

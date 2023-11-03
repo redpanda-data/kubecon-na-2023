@@ -1,0 +1,25 @@
+apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: aws-redpanda
+spec:
+# rollbackLimit: 3
+  providerConfigRef:
+    name: aws-helm-provider
+  forProvider:
+    chart:
+      name: redpanda
+      repository: https://charts.redpanda.com/
+      version: 5.6.28
+    namespace: redpanda
+    values:
+      auth:
+        sasl:
+          enabled: false
+      tls:
+        enabled: false
+      storage:
+        persistentVolume:
+          enabled: true
+          size: 10Gi
+          storageClass: gp2

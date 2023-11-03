@@ -3,7 +3,7 @@ In this repo, there are several examples of Redpanda deployments in Kubernetes. 
 
 ### Crossplane
 
-Quick method to handle Redpanda in Corssplane utilizing the Crossplane Helm provider.
+Quick method to handle Redpanda in Corssplane utilizing the Crossplane Helm provider. Crossplane Helm Provider: https://github.com/crossplane-contrib/provider-helm
 
 ### High-Throughput
 
@@ -11,10 +11,10 @@ Examples and READMEs for provisioning NVMe disks for use by Redpanda in AKS, EKS
 
 ### Flux CD 
 
-The kustomization and manifests for deploying Redpanda using the Flux Helm Controller
+The kustomization and manifests for deploying Redpanda using the Flux Helm Controller. FluxCD Documentation: https://fluxcd.io
 
 ### Redpanda Documentation
 
-https://docs.redpanda.com
-https://github.com/redpanda-data
+- [Redpanda Documentation](https://docs.redpanda.com)
+- [Redpanda Github](https://github.com/redpanda-data)
 
