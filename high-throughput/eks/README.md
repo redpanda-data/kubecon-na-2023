@@ -1,3 +1,7 @@
+### For EKS cluster with NVMe and LVM Linear XFS Storage Class
+
+(This is an example to test the I/O speed of the disks)
+
 Sequence of Commands:
 
 `eksctl` is the Amazon recommended tool for the command line creation and management of EKS clusters. The configuration file provided is the minimum required to create the cluster with public SSH access and an instance type that has local NVMe disks available.

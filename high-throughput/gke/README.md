@@ -1,3 +1,7 @@
+### For GKE cluster with NVMe and LVM Linear XFS Storage Class
+
+(This is an example to test the I/O speed of the disks)
+
 Sequence of commands:
 ```
 bash create-cluster.sh
